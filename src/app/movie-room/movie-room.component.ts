@@ -7,14 +7,14 @@ import { MovieRoom } from '../models/movie-room.model';
   templateUrl: './movie-room.component.html'
 })
 export class MovieRoomComponent {
-  public movieRooms: MovieRoom[];
+  public rooms: MovieRoom[];
 
   constructor(http: HttpClient, @Inject('MOVIE_THEATER_URL') baseUrl: string) {
     if(false){
       http.get<MovieRoom[]>(baseUrl + 'movierooms').subscribe(result => {
-        this.movieRooms = result;
+        this.rooms = result;
       }, error => console.error(error));
     }
-    this.movieRooms = [{Id:1, Name: "Room 1", Seats: 1}];
+    this.rooms = [{Id:1, Name: "Room 1", Seats: 1}];
   }
 }

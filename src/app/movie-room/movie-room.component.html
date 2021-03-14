@@ -2,21 +2,19 @@
 
 <section class="content">
   <div class="container-fluid">
-    <p *ngIf="!movieRooms"><em>Loading...</em></p>
+    <p *ngIf="!rooms"><em>Loading...</em></p>
 
-    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movieRooms">
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="rooms">
       <thead>
         <tr>
-          <th>Id</th>
-          <th>Nome</th>
-          <th>Quantidade de Assentos</th>
+          <th>Name</th>
+          <th>Seats Quantity</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let movieRoom of movieRooms">
-          <td>{{ movieRoom.Id }}</td>
-          <td>{{ movieRoom.Name }}</td>
-          <td>{{ movieRoom.Seats }}</td>
+        <tr *ngFor="let room of rooms">
+          <td>{{ room.Name }}</td>
+          <td>{{ room.Seats }}</td>
         </tr>
       </tbody>
     </table>

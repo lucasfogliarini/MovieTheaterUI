@@ -11,6 +11,7 @@ import { ContentHeaderComponent } from './content-header/content-header.componen
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieRoomComponent } from './movie-room/movie-room.component';
+import { MovieSessionComponent } from './movie-session/movie-session.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MovieRoomComponent } from './movie-room/movie-room.component';
     ContentHeaderComponent,
     HomeComponent,
     MovieComponent,
-    MovieRoomComponent
+    MovieRoomComponent,
+    MovieSessionComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { MovieRoomComponent } from './movie-room/movie-room.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'movies', component: MovieComponent },
-      { path: 'movie-rooms', component: MovieRoomComponent }
+      { path: 'movie-rooms', component: MovieRoomComponent },
+      { path: 'movie-sessions', component: MovieSessionComponent }
     ])
   ],
   providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:8080/'},
