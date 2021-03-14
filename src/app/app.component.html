@@ -1,6 +1,18 @@
-<body>
+<div class="wrapper">
+  <!-- Navbar -->
   <app-nav-menu></app-nav-menu>
-  <div class="container">
+  <!-- Main Sidebar Container -->
+  <app-sidebar-menu></app-sidebar-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
     <router-outlet></router-outlet>
   </div>
-</body>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2021.</strong>
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+</div>

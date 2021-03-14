@@ -9,9 +9,12 @@ import { MovieRoom } from '../models/movie-room.model';
 export class MovieRoomComponent {
   public movieRooms: MovieRoom[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<MovieRoom[]>(baseUrl + 'movierooms').subscribe(result => {
-      this.movieRooms = result;
-    }, error => console.error(error));
+  constructor(http: HttpClient, @Inject('MOVIE_THEATER_URL') baseUrl: string) {
+    if(false){
+      http.get<MovieRoom[]>(baseUrl + 'movierooms').subscribe(result => {
+        this.movieRooms = result;
+      }, error => console.error(error));
+    }
+    this.movieRooms = [{Id:1, Name: "Room 1", Seats: 1}];
   }
 }

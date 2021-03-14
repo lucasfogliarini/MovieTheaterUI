@@ -1,22 +1,24 @@
-<h1 id="tableLabel">Rooms</h1>
+<app-content-header headerTitle="Movie Room"></app-content-header>
 
-<p>.</p>
+<section class="content">
+  <div class="container-fluid">
+    <p *ngIf="!movieRooms"><em>Loading...</em></p>
 
-<p *ngIf="!movieRooms"><em>Loading...</em></p>
-
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movieRooms">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Nome</th>
-      <th>Quantidade de Assentos</th>]
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let movieRoom of movieRooms">
-      <td>{{ movieRoom.Id }}</td>
-      <td>{{ movieRoom.Name }}</td>
-      <td>{{ movieRoom.Seats }}</td>
-    </tr>
-  </tbody>
-</table>
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movieRooms">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Quantidade de Assentos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movieRoom of movieRooms">
+          <td>{{ movieRoom.Id }}</td>
+          <td>{{ movieRoom.Name }}</td>
+          <td>{{ movieRoom.Seats }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
