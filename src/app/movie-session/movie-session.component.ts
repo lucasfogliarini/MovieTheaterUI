@@ -19,13 +19,13 @@ export class MovieSessionComponent {
             private toastr: ToastrService) {
     http.get<MovieSession[]>(baseUrl + 'moviesessions').subscribe(result => {
       this.sessions = result;
-    }, error => console.error(error));
+    }, errorResponse => this.toastr.error(errorResponse.error));
   }
 
   delete(sessionId: number){
     var delResource = `${this.baseUrl}moviesessions/${sessionId}`;
     this.http.delete<number>(delResource).subscribe(result => {
       this.toastr.success('Session successfully deleted.');
-    }, error => console.error(error));
+    }, errorResponse => this.toastr.error(errorResponse.error));
   }
 }

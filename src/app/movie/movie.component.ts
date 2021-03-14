@@ -15,14 +15,13 @@ export class MovieComponent {
             private toastr: ToastrService) {
     http.get<Movie[]>(baseUrl + 'movies').subscribe(result => {
       this.movies = result;
-    }, error => console.error(error));
+    }, errorResponse => this.toastr.error(errorResponse.error));
   }
 
   delete(movieId: number){
     var delResource = `${this.baseUrl}movies/${movieId}`;
     this.http.delete<number>(delResource).subscribe(result => {
       this.toastr.success('Movie successfully deleted.');
-    }, error => console.log(error) );
-    //this.toastr.error(error)
+    }, errorResponse => this.toastr.error(errorResponse.error));
   }
 }
