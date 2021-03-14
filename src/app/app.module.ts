@@ -5,15 +5,17 @@ import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { SideBarMenuComponent } from './sidebar-menu/sidebar-menu.component';
+import { ContentHeaderComponent } from './content-header/content-header.component';
 import { MovieRoomComponent } from './movie-room/movie-room.component';
 import { HomeComponent } from './home/home.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { ContentHeaderComponent } from './content-header/content-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
+    SideBarMenuComponent,
     HomeComponent,
     MovieRoomComponent,
     ContentHeaderComponent
