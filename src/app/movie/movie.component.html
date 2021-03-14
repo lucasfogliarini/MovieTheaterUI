@@ -1,26 +1,56 @@
 <app-content-header headerTitle="Movies"></app-content-header>
 
 <section class="content">
-  <div class="container-fluid">
-    <p *ngIf="!movies"><em>Loading...</em></p>
+  <p *ngIf="!movies"><em>Loading...</em></p>
 
-    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movies">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Summary</th>
-          <th>Duration</th>
-          <th>Operations</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let movie of movies">
-          <td>{{ movie.title }}</td>
-          <td>{{ movie.description }}</td>
-          <td>{{ movie.duration }} min  </td>
-          <td>editar</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Movies</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects"  *ngIf="movies">
+              <thead>
+                  <tr>
+                      <th style="width: 20%">
+                          Title
+                      </th>
+                      <th style="width: 50%">
+                          Summary
+                      </th>
+                      <th>
+                        Duration
+                      </th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let movie of movies">
+                      <td>{{ movie.title }}</td>
+                      <td>{{ movie.description }}</td>
+                      <td>{{ movie.duration }} min  </td>
+                      <td class="project-actions text-right">
+                          <a class="btn btn-info btn-sm mr-2" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
 </section>
