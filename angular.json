@@ -43,8 +43,7 @@
               "node_modules/admin-lte/plugins/jqvmap/jquery.vmap.min.js",
               "node_modules/admin-lte/plugins/jqvmap/maps/jquery.vmap.usa.js",
               "node_modules/admin-lte/plugins/jquery-knob/jquery.knob.min.js",
-              "node_modules/admin-lte/dist/js/adminlte.min.js",
-              "node_modules/admin-lte/dist/js/pages/dashboard.js"
+              "node_modules/admin-lte/dist/js/adminlte.min.js"
             ]
           },
           "configurations": {
