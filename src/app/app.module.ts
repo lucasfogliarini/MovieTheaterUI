@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -12,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieRoomComponent } from './movie-room/movie-room.component';
 import { MovieSessionComponent } from './movie-session/movie-session.component';
-import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     ]),
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger',
-    })
+    }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
               {provide: APP_BASE_HREF, useValue: '/'}],

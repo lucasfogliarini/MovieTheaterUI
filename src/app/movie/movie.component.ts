@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../models/movie.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-movie',
@@ -9,7 +10,9 @@ import { Movie } from '../models/movie.model';
 export class MovieComponent {
   public movies: Movie[];
 
-  constructor(private http: HttpClient, @Inject('MOVIE_THEATER_URL') private baseUrl: string) {
+  constructor(private http: HttpClient, 
+            @Inject('MOVIE_THEATER_URL') private baseUrl: string,
+            private toastr: ToastrService) {
     http.get<Movie[]>(baseUrl + 'movies').subscribe(result => {
       this.movies = result;
     }, error => console.error(error));
@@ -18,6 +21,8 @@ export class MovieComponent {
   delete(movieId: number){
     var delResource = `${this.baseUrl}movies/${movieId}`;
     this.http.delete<number>(delResource).subscribe(result => {
-    }, error => console.error(error));
+      this.toastr.success('Movie successfully deleted.');
+    }, error => console.log(error) );
+    //this.toastr.error(error)
   }
 }
