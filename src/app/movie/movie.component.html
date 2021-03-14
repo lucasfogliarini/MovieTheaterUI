@@ -1,0 +1,26 @@
+<app-content-header headerTitle="Movies"></app-content-header>
+
+<section class="content">
+  <div class="container-fluid">
+    <p *ngIf="!movies"><em>Loading...</em></p>
+
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movies">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Duration</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{ movie.Title }}</td>
+          <td>{{ movie.Description }}</td>
+          <td>{{ movie.Duration }}</td>
+          <td>editar</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

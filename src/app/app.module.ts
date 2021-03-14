@@ -8,24 +8,27 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SideBarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { ContentHeaderComponent } from './content-header/content-header.component';
-import { MovieRoomComponent } from './movie-room/movie-room.component';
 import { HomeComponent } from './home/home.component';
+import { MovieComponent } from './movie/movie.component';
+import { MovieRoomComponent } from './movie-room/movie-room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     SideBarMenuComponent,
+    ContentHeaderComponent,
     HomeComponent,
-    MovieRoomComponent,
-    ContentHeaderComponent
+    MovieComponent,
+    MovieRoomComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'movie-rooms', component: MovieRoomComponent },
+      { path: 'movies', component: MovieComponent },
+      { path: 'movie-rooms', component: MovieRoomComponent }
     ])
   ],
   providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:8080/'},
