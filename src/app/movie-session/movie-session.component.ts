@@ -13,9 +13,15 @@ export class MovieSessionComponent {
   motionGraphic = MotionGraphics;
   movieAudio = MovieAudio;
 
-  constructor(http: HttpClient, @Inject('MOVIE_THEATER_URL') baseUrl: string) {
+  constructor(private http: HttpClient, @Inject('MOVIE_THEATER_URL') private baseUrl: string) {
     http.get<MovieSession[]>(baseUrl + 'moviesessions').subscribe(result => {
       this.sessions = result;
+    }, error => console.error(error));
+  }
+
+  delete(sessionId: number){
+    var delResource = `${this.baseUrl}moviesessions/${sessionId}`;
+    this.http.delete<number>(delResource).subscribe(result => {
     }, error => console.error(error));
   }
 }
