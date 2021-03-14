@@ -8,7 +8,7 @@
       <thead>
         <tr>
           <th>Title</th>
-          <th>Description</th>
+          <th>Summary</th>
           <th>Duration</th>
           <th>Operations</th>
         </tr>
@@ -17,7 +17,7 @@
         <tr *ngFor="let movie of movies">
           <td>{{ movie.title }}</td>
           <td>{{ movie.description }}</td>
-          <td>{{ movie.duration }}</td>
+          <td>{{ movie.duration }} min  </td>
           <td>editar</td>
         </tr>
       </tbody>

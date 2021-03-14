@@ -17,9 +17,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let session of sessions">
-          <td>{{ session.presentationStart }}</td>
-          <td>{{ session.presentationEnd }}</td>
-          <td>{{ session.ticketPrice }}</td>
+          <td>{{ session.presentationStart | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ session.presentationEnd | date: 'dd/MM/yyyy HH:mm'}}</td>
+          <td>{{ session.ticketPrice| currency:'BRL' }}</td>
           <td>{{ session.audio }}</td>
           <td>{{ session.motionGraphics }}</td>
           <td>delete</td>
