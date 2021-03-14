@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Rooms</h1>
+
+<p>.</p>
+
+<p *ngIf="!movieRooms"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movieRooms">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Quantidade de Assentos</th>]
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movieRoom of movieRooms">
+      <td>{{ movieRoom.Id }}</td>
+      <td>{{ movieRoom.Name }}</td>
+      <td>{{ movieRoom.Seats }}</td>
+    </tr>
+  </tbody>
+</table>
