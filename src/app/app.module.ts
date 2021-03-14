@@ -34,7 +34,7 @@ import { MovieSessionComponent } from './movie-session/movie-session.component';
       { path: 'movie-sessions', component: MovieSessionComponent }
     ])
   ],
-  providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:8080/'},
+  providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
               {provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })

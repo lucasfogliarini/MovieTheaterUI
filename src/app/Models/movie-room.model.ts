@@ -1,5 +1,5 @@
 export class MovieRoom {
-    Id: number;
-    Name: string;
-    Seats: number;
+    id: number;
+    name: string;
+    seats: number;
 }

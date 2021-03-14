@@ -1,7 +1,7 @@
-export class Movie {
-    Id: number;
-    Title: string;
-    Description: string;
-    Duration: number;
-    Banner: string;
+export interface Movie {
+    id: number;
+    title: string;
+    description: string;
+    duration: number;
+    banner: string;
 }

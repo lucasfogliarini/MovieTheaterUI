@@ -10,11 +10,8 @@ export class MovieRoomComponent {
   public rooms: MovieRoom[];
 
   constructor(http: HttpClient, @Inject('MOVIE_THEATER_URL') baseUrl: string) {
-    if(false){
-      http.get<MovieRoom[]>(baseUrl + 'movierooms').subscribe(result => {
-        this.rooms = result;
-      }, error => console.error(error));
-    }
-    this.rooms = [{Id:1, Name: "Room 1", Seats: 1}];
+    http.get<MovieRoom[]>(baseUrl + 'movierooms').subscribe(result => {
+      this.rooms = result;
+    }, error => console.error(error));      
   }
 }

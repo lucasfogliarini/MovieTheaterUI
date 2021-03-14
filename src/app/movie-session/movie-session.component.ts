@@ -10,11 +10,8 @@ export class MovieSessionComponent {
   public sessions: MovieSession[];
 
   constructor(http: HttpClient, @Inject('MOVIE_THEATER_URL') baseUrl: string) {
-    if(false){
-      http.get<MovieSession[]>(baseUrl + 'movie-sessions').subscribe(result => {
-        this.sessions = result;
-      }, error => console.error(error));
-    }
-    this.sessions = [ { Id:1, Audio: 1, MotionGraphics: 2, PresentationStart: new Date, PresentationEnd: new Date, TicketPrice: 1 }];
+    http.get<MovieSession[]>(baseUrl + 'moviesessions').subscribe(result => {
+      this.sessions = result;
+    }, error => console.error(error));
   }
 }
