@@ -1,30 +1,49 @@
 <app-content-header headerTitle="Sessions"></app-content-header>
 
 <section class="content">
-  <div class="container-fluid">
-    <p *ngIf="!sessions"><em>Loading...</em></p>
+  <p *ngIf="!sessions"><em>Loading...</em></p>
 
-    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="sessions">
-      <thead>
-        <tr>
-          <th>Start</th>
-          <th>End</th>
-          <th>Ticket Price</th>
-          <th>Audio</th>
-          <th>Motion Graphics</th>
-          <th>Operations</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let session of sessions">
-          <td>{{ session.presentationStart | date: 'dd/MM/yyyy HH:mm' }}</td>
-          <td>{{ session.presentationEnd | date: 'dd/MM/yyyy HH:mm'}}</td>
-          <td>{{ session.ticketPrice| currency:'BRL' }}</td>
-          <td>{{ movieAudio[session.audio] }}</td>
-          <td>{{ motionGraphic[session.motionGraphics] }}</td>
-          <td>delete</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Sessions</h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+          <i class="fas fa-minus"></i></button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+          <i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped projects"  *ngIf="sessions">
+          <thead>
+              <tr>
+                <th>Start</th>
+                <th>End</th>
+                <th>Ticket Price</th>
+                <th>Audio</th>
+                <th>Motion Graphics</th>
+                <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let session of sessions">
+                <td>{{ session.presentationStart | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ session.presentationEnd | date: 'dd/MM/yyyy HH:mm'}}</td>
+                <td>{{ session.ticketPrice| currency:'BRL' }}</td>
+                <td>{{ movieAudio[session.audio] }}</td>
+                <td>{{ motionGraphic[session.motionGraphics] }}</td>
+                <td class="project-actions text-right">
+                    <a class="btn btn-danger btn-sm" href="#">
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                    </a>
+                </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+    <!-- /.card-body -->
   </div>
 </section>
