@@ -20,8 +20,8 @@
           <td>{{ session.presentationStart | date: 'dd/MM/yyyy HH:mm' }}</td>
           <td>{{ session.presentationEnd | date: 'dd/MM/yyyy HH:mm'}}</td>
           <td>{{ session.ticketPrice| currency:'BRL' }}</td>
-          <td>{{ session.audio }}</td>
-          <td>{{ session.motionGraphics }}</td>
+          <td>{{ movieAudio[session.audio] }}</td>
+          <td>{{ motionGraphic[session.motionGraphics] }}</td>
           <td>delete</td>
         </tr>
       </tbody>
