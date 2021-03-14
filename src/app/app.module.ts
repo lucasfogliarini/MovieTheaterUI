@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieRoomComponent } from './movie-room/movie-room.component';
 import { MovieSessionComponent } from './movie-session/movie-session.component';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { MovieSessionComponent } from './movie-session/movie-session.component';
       { path: 'movies', component: MovieComponent },
       { path: 'movie-rooms', component: MovieRoomComponent },
       { path: 'movie-sessions', component: MovieSessionComponent }
-    ])
+    ]),
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger',
+    })
   ],
   providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
               {provide: APP_BASE_HREF, useValue: '/'}],

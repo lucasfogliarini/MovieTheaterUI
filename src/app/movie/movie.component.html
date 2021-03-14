@@ -41,7 +41,12 @@
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="#"
+                                mwlConfirmationPopover
+                                popoverTitle="Delete"
+                                popoverMessage="Do you really want to permanently delete it?"
+                                placement="left"
+                                (confirm)="delete(movie.id)" >
                               <i class="fas fa-trash">
                               </i>
                               Delete
