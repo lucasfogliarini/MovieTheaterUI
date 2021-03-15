@@ -19,6 +19,8 @@
       <table class="table table-striped projects"  *ngIf="sessions">
           <thead>
               <tr>
+                <th>Movie</th>
+                <th>Room</th>
                 <th>Start</th>
                 <th>End</th>
                 <th>Ticket Price</th>
@@ -29,6 +31,8 @@
           </thead>
           <tbody>
               <tr *ngFor="let session of sessions">
+                <td>{{ session.movieTitle }}</td>
+                <td>{{ session.roomName }}</td>
                 <td>{{ session.presentationStart | date: 'dd/MM/yyyy HH:mm' }}</td>
                 <td>{{ session.presentationEnd | date: 'dd/MM/yyyy HH:mm'}}</td>
                 <td>{{ session.ticketPrice| currency:'BRL' }}</td>

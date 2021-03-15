@@ -13,11 +13,11 @@
       </div>
       <div class="card-body">
         <div class="form-group">
-          <label for="presentation">Presentation</label>
-          <input id="presentation" [(ngModel)]="presentationRange" 
-                [selectMode]="'range'" [owlDateTime]="dtPresentation" [owlDateTimeTrigger]="dtPresentation"
-                 class="form-control" placeholder="dd/mm/aaaa from: hh:min ~ to: hh:min">
-          <owl-date-time #dtPresentation></owl-date-time>
+          <label for="presentationStart">Start</label>
+          <input id="presentationStart" [(ngModel)]="session.presentationStart" 
+                [owlDateTime]="dtStart" [owlDateTimeTrigger]="dtStart"
+                 class="form-control" placeholder="dd/mm/aaaa hh:min">
+          <owl-date-time #dtStart></owl-date-time>
         </div>
         <div class="form-group">
           <label for="ticketPrice">Ticket Price</label>
