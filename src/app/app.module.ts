@@ -36,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'movies', component: MovieComponent },
-      { path: 'movie',  component: MovieEditComponent },
+      { path: 'movie/:id',  component: MovieEditComponent },
       { path: 'movie-rooms', component: MovieRoomComponent },
       { path: 'movie-sessions', component: MovieSessionComponent },
     ]),
