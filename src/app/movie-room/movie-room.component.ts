@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MovieRoom } from '../models/movie-room.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-movie-room',
@@ -9,9 +10,11 @@ import { MovieRoom } from '../models/movie-room.model';
 export class MovieRoomComponent {
   public rooms: MovieRoom[];
 
-  constructor(http: HttpClient, @Inject('MOVIE_THEATER_URL') baseUrl: string) {
+  constructor(http: HttpClient, 
+            @Inject('MOVIE_THEATER_URL') baseUrl: string,
+            private toastr: ToastrService) {
     http.get<MovieRoom[]>(baseUrl + 'movierooms').subscribe(result => {
       this.rooms = result;
-    }, error => console.error(error));      
+    }, errorResponse => this.toastr.error(errorResponse.message));
   }
 }

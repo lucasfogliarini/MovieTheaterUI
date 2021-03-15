@@ -18,7 +18,7 @@ export class MovieComponent {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     http.get<Movie[]>(baseUrl + 'movies').subscribe(result => {
       this.movies = result;
-    }, errorResponse => this.toastr.error(errorResponse.error));
+    }, errorResponse => this.toastr.error(errorResponse.message));
   }
 
   delete(movieId: number){

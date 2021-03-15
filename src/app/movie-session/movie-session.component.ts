@@ -19,7 +19,7 @@ export class MovieSessionComponent {
             private toastr: ToastrService) {
     http.get<MovieSession[]>(baseUrl + 'moviesessions').subscribe(result => {
       this.sessions = result;
-    }, errorResponse => this.toastr.error(errorResponse.error));
+    }, errorResponse => this.toastr.error(errorResponse.message));
   }
 
   delete(sessionId: number){
