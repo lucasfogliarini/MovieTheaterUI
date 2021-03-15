@@ -55,5 +55,14 @@
       </table>
     </div>
     <!-- /.card-body -->
+
+    <ul class="pagination mx-auto mt-4">
+      <li class="page-item">
+        <a class="page-link" [queryParams]="{page: currentPage - 1}"  [routerLink]="['/movie-sessions']">Previous</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" [queryParams]="{page: currentPage + 1}"  [routerLink]="['/movie-sessions']">Next</a>
+      </li>
+    </ul>
   </div>
 </section>

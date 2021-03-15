@@ -4,24 +4,32 @@ import { MovieSession } from '../models/movie-session.model';
 import { MotionGraphics } from '../models/motion-graphics.enum';
 import { MovieAudio } from '../models/movie-audio.enum';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-session',
   templateUrl: './movie-session.component.html'
 })
 export class MovieSessionComponent {
-  public sessions: MovieSession[];
+  sessions: MovieSession[];
   motionGraphic = MotionGraphics;
   movieAudio = MovieAudio;
+  currentPage: number;
 
   constructor(private http: HttpClient, 
             @Inject('MOVIE_THEATER_URL') private baseUrl: string,
             private toastr: ToastrService,
-            private router: Router) {
-    http.get<MovieSession[]>(baseUrl + 'moviesessions').subscribe(result => {
-      this.sessions = result;
-    }, errorResponse => this.toastr.error(errorResponse.message));
+            private router: Router,
+            private activeRoute: ActivatedRoute) {
+    this.activeRoute.queryParams.subscribe(queryParams => {
+        this.currentPage = +queryParams['page'];
+        this.currentPage = this.currentPage || 1;
+        var skip = (this.currentPage - 1)  * 10;
+        var sessionsUri = `${this.baseUrl}moviesessions?skip=${skip}`;
+        http.get<MovieSession[]>(sessionsUri).subscribe(result => {
+          this.sessions = result;
+        }, errorResponse => this.toastr.error(errorResponse.message));
+    });
   }
 
   delete(sessionId: number){

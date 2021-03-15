@@ -2,23 +2,31 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../models/movie.model';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html'
 })
 export class MovieComponent {
-  public movies: Movie[];
+  movies: Movie[];
+  currentPage: number;
 
   constructor(private http: HttpClient, 
             @Inject('MOVIE_THEATER_URL') private baseUrl: string,
             private toastr: ToastrService,
-            private router: Router) {
+            private router: Router,
+            private activeRoute: ActivatedRoute) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    http.get<Movie[]>(baseUrl + 'movies').subscribe(result => {
-      this.movies = result;
-    }, errorResponse => this.toastr.error(errorResponse.message));
+    this.activeRoute.queryParams.subscribe(queryParams => {
+      this.currentPage = +queryParams['page'];
+      this.currentPage = this.currentPage || 1;
+      var skip = (this.currentPage - 1)  * 10;
+      var moviesUri = `${this.baseUrl}movies?skip=${skip}`;
+      http.get<Movie[]>(moviesUri).subscribe(result => {
+        this.movies = result;
+      }, errorResponse => this.toastr.error(errorResponse.message));
+    });
   }
 
   delete(movieId: number){
