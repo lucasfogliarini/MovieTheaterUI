@@ -13,8 +13,10 @@ import { SideBarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { ContentHeaderComponent } from './content-header/content-header.component';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
+import { MovieEditComponent } from './movie-edit/movie-edit.component';
 import { MovieRoomComponent } from './movie-room/movie-room.component';
 import { MovieSessionComponent } from './movie-session/movie-session.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { MovieSessionComponent } from './movie-session/movie-session.component';
     ContentHeaderComponent,
     HomeComponent,
     MovieComponent,
+    MovieEditComponent,
     MovieRoomComponent,
     MovieSessionComponent
   ],
@@ -33,13 +36,15 @@ import { MovieSessionComponent } from './movie-session/movie-session.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'movies', component: MovieComponent },
+      { path: 'movie',  component: MovieEditComponent },
       { path: 'movie-rooms', component: MovieRoomComponent },
-      { path: 'movie-sessions', component: MovieSessionComponent }
+      { path: 'movie-sessions', component: MovieSessionComponent },
     ]),
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger',
     }),
     BrowserAnimationsModule,
+    FormsModule,
     ToastrModule.forRoot()
   ],
   providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
