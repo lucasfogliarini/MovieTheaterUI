@@ -12,16 +12,12 @@
         </div>
       </div>
       <div class="card-body">
-        <input [owlDateTime]="dt" [owlDateTimeTrigger]="dt">
-        <owl-date-time #dt></owl-date-time>
-
         <div class="form-group">
-          <label for="start">Start</label>
-          <input [(ngModel)]="session.presentationStart" type="date" id="start" class="form-control" placeholder="Start">
-        </div>
-        <div class="form-group">
-          <label for="end">End</label>
-          <input [(ngModel)]="session.presentationEnd" type="date" id="end" class="form-control" placeholder="End">
+          <label for="presentation">Presentation</label>
+          <input id="presentation" [(ngModel)]="presentationRange" 
+                [selectMode]="'range'" [owlDateTime]="dtPresentation" [owlDateTimeTrigger]="dtPresentation"
+                 class="form-control" placeholder="dd/mm/aaaa from: hh:min ~ to: hh:min">
+          <owl-date-time #dtPresentation></owl-date-time>
         </div>
         <div class="form-group">
           <label for="ticketPrice">Ticket Price</label>
@@ -29,7 +25,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <a [routerLink]="['/movie-sesions']" class="btn btn-secondary">Cancel</a>
+            <a [routerLink]="['/movie-sessions']" class="btn btn-secondary">Cancel</a>
             <button (click)="create()" class="btn btn-success float-right">Create</button>
           </div>
         </div>

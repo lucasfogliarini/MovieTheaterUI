@@ -7,6 +7,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -19,7 +21,6 @@ import { MovieCreateComponent } from './movie-create/movie-create.component';
 import { MovieEditComponent } from './movie-edit/movie-edit.component';
 import { MovieSessionComponent } from './movie-session/movie-session.component';
 import { MovieSessionCreateComponent } from './movie-session-create/movie-session-create.component';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     ToastrModule.forRoot()
   ],
   providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
-              {provide: APP_BASE_HREF, useValue: '/'}],
+              {provide: APP_BASE_HREF, useValue: '/'},
+              {provide: OWL_DATE_TIME_LOCALE, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
