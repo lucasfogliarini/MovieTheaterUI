@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
+import { NgSelect2Module } from 'ng-select2';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -21,7 +22,8 @@ import { MovieCreateComponent } from './movie-create/movie-create.component';
 import { MovieEditComponent } from './movie-edit/movie-edit.component';
 import { MovieSessionComponent } from './movie-session/movie-session.component';
 import { MovieSessionCreateComponent } from './movie-session-create/movie-session-create.component';
-import { NgSelect2Module } from 'ng-select2';
+import { LoginComponent } from './login/login.component';
+import { User } from './models/user.model';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { NgSelect2Module } from 'ng-select2';
     SideBarMenuComponent,
     ContentHeaderComponent,
     HomeComponent,
+    LoginComponent,
     MovieRoomComponent,
     MovieComponent,
     MovieCreateComponent,
@@ -42,6 +45,7 @@ import { NgSelect2Module } from 'ng-select2';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'login', component: LoginComponent },
       { path: 'movie-rooms', component: MovieRoomComponent },
       { path: 'movies', component: MovieComponent },
       { path: 'movie',  component: MovieCreateComponent },
@@ -59,9 +63,10 @@ import { NgSelect2Module } from 'ng-select2';
     NgSelect2Module,
     ToastrModule.forRoot()
   ],
-  providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
-              {provide: APP_BASE_HREF, useValue: '/'},
-              {provide: OWL_DATE_TIME_LOCALE, useValue: 'pt-BR'}],
+  providers: [{ provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
+              { provide: APP_BASE_HREF, useValue: '/'},
+              { provide: OWL_DATE_TIME_LOCALE, useValue: 'pt-BR'},
+              { provide: User, useValue: new User('lucasfogliarini') }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,43 @@
+<div style="display: block;" class="modal fade show" id="loginModal" tabindex="0" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModal">Login</h5>
+      </div>
+      <div class="modal-body">
+        <div class="login-box mx-auto">
+          <div class="login-logo">
+            <a href="#">Movie Theater Manager</a>
+          </div>
+          <!-- /.login-logo -->
+          <div class="card">
+            <div class="card-body login-card-body">
+              <p class="login-box-msg">Sign in to start your session</p>
+                <div class="input-group mb-3">
+                  <input [(ngModel)]="user.login" type="text" class="form-control" placeholder="User">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-envelope"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" class="form-control" placeholder="Password">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-lock"></span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- /.login-card-body -->
+          </div>
+        </div>
+        <!-- /.login-box -->
+      </div>
+      <div class="modal-footer">
+        <button (click)="login()" type="button" class="btn btn-primary">Log In</button>
+      </div>
+    </div>
+  </div>
+</div>
