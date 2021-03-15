@@ -1,5 +1,12 @@
 @import "~ng-pick-datetime/assets/style/picker.min.css";
 @import "~admin-lte/dist/css/adminlte.min.css";
 @import "~admin-lte/plugins/fontawesome-free/css/all.min.css";
+@import "~select2/dist/css/select2.min.css";
 @import "~admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css";
 @import "~ngx-toastr/toastr.css";
+
+
+.select2-container .select2-selection--single {
+    border: 0;
+    padding: 0;
+}

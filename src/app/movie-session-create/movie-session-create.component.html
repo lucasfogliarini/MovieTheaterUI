@@ -38,6 +38,28 @@
           </div>
         </div>
         <div class="row">
+          <div class="form-group col-6">
+            <label for="room">Room</label>
+            <ng-select2
+              [(ngModel)]="session.roomId"
+              [data]="rooms"
+              [width]="580"
+              [placeholder]="'Room'"
+              class="form-control">
+            </ng-select2>
+          </div>
+          <div class="form-group col-6">
+            <label for="movie">Movie</label>
+            <ng-select2
+              [(ngModel)]="session.movieId"
+              [data]="movies"
+              [width]="580"
+              [placeholder]="'Movie'"
+              class="form-control">
+            </ng-select2>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-12">
             <a [routerLink]="['/movie-sessions']" class="btn btn-secondary">Cancel</a>
             <button (click)="create()" class="btn btn-success float-right">Create</button>

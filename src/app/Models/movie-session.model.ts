@@ -8,4 +8,6 @@ export class MovieSession {
     ticketPrice: number;
     motionGraphics: MotionGraphics;
     audio: MovieAudio;
+    roomId: number;
+    movieId: number;
 }

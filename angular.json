@@ -29,6 +29,7 @@
             "scripts": [
               "node_modules/admin-lte/plugins/jquery/jquery.min.js",
               "node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js",
+              "node_modules/select2/dist/js/select2.min.js",
               "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
               "node_modules/admin-lte/plugins/chart.js/Chart.min.js",
               "node_modules/admin-lte/plugins/sparklines/sparkline.js",

@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { MovieSession } from '../models/movie-session.model';
 import { MotionGraphics } from '../models/motion-graphics.enum';
 import { MovieAudio } from '../models/movie-audio.enum';
+import { MovieRoom } from '../models/movie-room.model';
+import { Movie } from '../models/movie.model';
 
 @Component({
   selector: 'app-movie-session-create',
@@ -15,6 +17,8 @@ export class MovieSessionCreateComponent {
   public presentationRange: any;
   public motionGraphics: any;
   public movieAudios: any;
+  public rooms: any[];
+  public movies: any[];
 
   constructor(private http: HttpClient, 
             @Inject('MOVIE_THEATER_URL') private baseUrl: string,
@@ -23,6 +27,18 @@ export class MovieSessionCreateComponent {
               this.session = new MovieSession();
               this.motionGraphics = this.GetSelectOptions(MotionGraphics);
               this.movieAudios = this.GetSelectOptions(MovieAudio);
+
+              http.get<MovieRoom[]>(baseUrl + 'movierooms').subscribe(result => {
+                this.rooms =result.map(function(r){
+                    return { id: r.id, text: r.name };
+                });
+              }, errorResponse => this.toastr.error(errorResponse.message));
+
+              http.get<Movie[]>(baseUrl + 'movies').subscribe(result => {
+                this.movies = result.map(function(r){
+                    return { id: r.id, text: r.title };
+                });
+              }, errorResponse => this.toastr.error(errorResponse.message));
   }
 
   create(){

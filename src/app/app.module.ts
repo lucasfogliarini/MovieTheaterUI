@@ -21,6 +21,7 @@ import { MovieCreateComponent } from './movie-create/movie-create.component';
 import { MovieEditComponent } from './movie-edit/movie-edit.component';
 import { MovieSessionComponent } from './movie-session/movie-session.component';
 import { MovieSessionCreateComponent } from './movie-session-create/movie-session-create.component';
+import { NgSelect2Module } from 'ng-select2';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { MovieSessionCreateComponent } from './movie-session-create/movie-sessio
     FormsModule,
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
+    NgSelect2Module,
     ToastrModule.forRoot()
   ],
   providers: [{provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
