@@ -9,11 +9,15 @@ import { User } from '../models/user.model';
 export class LoginComponent {
   constructor(private router: Router, 
               private toastr: ToastrService,
-              public user: User) {
-  }
+              public user: User) { }
 
   login(){
-    this.toastr.success(this.user.login + ' successfully logged in');
-    this.router.navigateByUrl('/');
+    if(this.user.login){
+      this.toastr.success(this.user.login + ' successfully logged in');
+      this.router.navigateByUrl('/');
+    }
+    else{
+      this.toastr.info('User is required. The password can be empty! ;)');
+    }
   }
 }

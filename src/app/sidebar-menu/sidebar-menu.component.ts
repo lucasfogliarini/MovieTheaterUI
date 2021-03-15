@@ -6,6 +6,5 @@ import { User } from '../models/user.model';
   templateUrl: './sidebar-menu.component.html'
 })
 export class SideBarMenuComponent {
-  constructor(public user: User) {    
-  }
+  constructor(public user: User) {}
 }

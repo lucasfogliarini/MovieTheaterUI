@@ -66,7 +66,7 @@ import { User } from './models/user.model';
   providers: [{ provide: 'MOVIE_THEATER_URL', useValue: 'http://localhost:1100/'},
               { provide: APP_BASE_HREF, useValue: '/'},
               { provide: OWL_DATE_TIME_LOCALE, useValue: 'pt-BR'},
-              { provide: User, useValue: new User('lucasfogliarini') }],
+              { provide: User }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
