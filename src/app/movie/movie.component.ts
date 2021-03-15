@@ -25,7 +25,7 @@ export class MovieComponent {
     var delResource = `${this.baseUrl}movies/${movieId}`;
     this.http.delete<number>(delResource).subscribe(result => {
       this.toastr.success('Movie successfully deleted.');
-      this.router.navigateByUrl('/movies?'+Math.random());
+      this.router.navigateByUrl('/movies?deletedId='+movieId);
     }, errorResponse => this.toastr.error(errorResponse.error));
   }
 }
