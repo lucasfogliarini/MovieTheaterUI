@@ -13,6 +13,7 @@ import { SideBarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { ContentHeaderComponent } from './content-header/content-header.component';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
+import { MovieCreateComponent } from './movie-create/movie-create.component';
 import { MovieEditComponent } from './movie-edit/movie-edit.component';
 import { MovieRoomComponent } from './movie-room/movie-room.component';
 import { MovieSessionComponent } from './movie-session/movie-session.component';
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     ContentHeaderComponent,
     HomeComponent,
     MovieComponent,
+    MovieCreateComponent,
     MovieEditComponent,
     MovieRoomComponent,
     MovieSessionComponent
@@ -36,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'movies', component: MovieComponent },
+      { path: 'movie',  component: MovieCreateComponent },
       { path: 'movie/:id',  component: MovieEditComponent },
       { path: 'movie-rooms', component: MovieRoomComponent },
       { path: 'movie-sessions', component: MovieSessionComponent },

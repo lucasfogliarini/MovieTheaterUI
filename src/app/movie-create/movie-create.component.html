@@ -1,10 +1,10 @@
-<app-content-header headerTitle="Movie Edit"></app-content-header>
+<app-content-header headerTitle="Movie Create"></app-content-header>
 
 <section class="content">
-  <div class="container-fluid" *ngIf="movie">
+  <div class="container-fluid">
     <div class="card card-primary">
       <div class="card-header">
-        <h3 class="card-title">Edit</h3>
+        <h3 class="card-title">Create</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-12">
             <a [routerLink]="['/movies']" class="btn btn-secondary">Cancel</a>
-            <button (click)="update()" class="btn btn-success float-right">Update</button>
+            <button (click)="create()" class="btn btn-success float-right">Create</button>
           </div>
         </div>
       </div>

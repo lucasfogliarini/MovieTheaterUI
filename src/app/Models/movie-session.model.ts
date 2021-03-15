@@ -1,7 +1,7 @@
 import { MotionGraphics } from "./motion-graphics.enum";
 import { MovieAudio } from "./movie-audio.enum";
 
-export interface MovieSession {
+export class MovieSession {
     id: number;
     presentationStart: Date;
     presentationEnd: Date;
