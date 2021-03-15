@@ -20,6 +20,7 @@
     "@angular/router": "~11.2.5",
     "admin-lte": "^3.0.5",
     "angular-confirmation-popover": "^6.0.0",
+    "ng-pick-datetime": "^7.0.0",
     "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

@@ -12,6 +12,9 @@
         </div>
       </div>
       <div class="card-body">
+        <input [owlDateTime]="dt" [owlDateTimeTrigger]="dt">
+        <owl-date-time #dt></owl-date-time>
+
         <div class="form-group">
           <label for="start">Start</label>
           <input [(ngModel)]="session.presentationStart" type="date" id="start" class="form-control" placeholder="Start">
