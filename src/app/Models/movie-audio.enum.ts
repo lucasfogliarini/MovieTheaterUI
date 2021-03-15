@@ -1,4 +1,4 @@
 export enum MovieAudio {
-    Original,
-    Dubbing
+    Original = 1,
+    Dubbing = 2,
 }
